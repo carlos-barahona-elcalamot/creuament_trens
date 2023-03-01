@@ -1,0 +1,6 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+creuament_vehicles,com.ieselcalamot.creuament_vehicles,CreuamentTrens,112,0,4,0,22,0,4,0,2,0
+creuament_vehicles,com.ieselcalamot.creuament_vehicles.vehicles,Tren,24,0,0,0,10,0,5,0,5,0
+creuament_vehicles,com.ieselcalamot.creuament_vehicles.vehicles,Colisio,43,0,0,0,10,0,1,0,1,0
+creuament_vehicles,com.ieselcalamot.creuament_vehicles.vehicles,Via,165,0,14,0,19,0,12,0,5,0
+creuament_vehicles,com.ieselcalamot.creuament_vehicles.vehicles,Simulador,85,0,6,0,19,0,6,0,3,0

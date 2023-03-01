@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Via.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">creuament_vehicles</a> &gt; <a href="index.source.html" class="el_package">com.ieselcalamot.creuament_vehicles.vehicles</a> &gt; <span class="el_source">Via.java</span></div><h1>Via.java</h1><pre class="source lang-java linenums">package com.ieselcalamot.creuament_vehicles.vehicles;
+
+<span class="nc" id="L3">public class Via {</span>
+
+<span class="nc" id="L5">    private short nombreTrens = 0;</span>
+<span class="nc" id="L6">    private Tren[] trens = new Tren[2];</span>
+<span class="nc" id="L7">    private float[] posicionsInicials = new float[2];</span>
+
+    public void afegirTren(float velocitat, float posicio) {
+        try {
+<span class="nc" id="L11">            trens[nombreTrens] = new Tren(velocitat);</span>
+<span class="nc" id="L12">            posicionsInicials[nombreTrens++] = posicio;</span>
+<span class="nc" id="L13">        } catch (IndexOutOfBoundsException e) {</span>
+<span class="nc" id="L14">            throw new OutOfMemoryError(&quot;No es poden afegir més de &quot; + trens.length + &quot; trens.&quot;);</span>
+<span class="nc" id="L15">        }</span>
+<span class="nc" id="L16">    }</span>
+
+    public float getPosicio(int nombreTren, float t) {
+<span class="nc" id="L19">        return trens[nombreTren].getVelocitat() * t + posicionsInicials[nombreTren];</span>
+    }
+
+    public boolean isColisio(float t0, float t1) {
+<span class="nc" id="L23">        float d0t0 = getPosicio(0, t0) + posicionsInicials[0];</span>
+<span class="nc" id="L24">        float d1t0 = getPosicio(1, t0) + posicionsInicials[1];</span>
+<span class="nc" id="L25">        float d0t1 = getPosicio(0, t1) + posicionsInicials[0];</span>
+<span class="nc" id="L26">        float d1t1 = getPosicio(1, t1) + posicionsInicials[1];</span>
+
+        // Detectem si hi ha hagut colisió si els trens han canviat de posició en aquest
+        // interval de temps,
+        // es a dir, si la posició del tren1 a t0 es més petita que la posició del
+        // tren2,
+        // a t1, aquesta posició ha de seguir sent més petita (i a la inversa),
+        // o si les posicions son iguals en t0 o en t1
+<span class="nc bnc" id="L34" title="All 12 branches missed.">        return ((d0t0 &gt; d1t0 &amp;&amp; d0t1 &lt; d1t1) || (d0t0 &lt; d1t0 &amp;&amp; d0t1 &gt; d1t1) || d0t0 == d1t0 || d0t1 == d1t1);</span>
+    }
+
+    public boolean isAllunyantse(float t1, float t0) {
+<span class="nc" id="L38">        float d0 = Math.abs(getPosicio(0, t0) - getPosicio(1, t0));</span>
+<span class="nc" id="L39">        float d1 = Math.abs(getPosicio(0, t1) - getPosicio(1, t1));</span>
+<span class="nc bnc" id="L40" title="All 2 branches missed.">        return d1 &gt; d0;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>
