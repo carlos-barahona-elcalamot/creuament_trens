@@ -1,4 +1,7 @@
-package com.ieselcalamot.creuament_vehicles.vehicles;
+package com.simuladors;
+
+import com.ieselcalamot.creuament_vehicles.vehicles.Colisio;
+import com.ieselcalamot.creuament_vehicles.vehicles.Via;
 
 public class Simulador {
 

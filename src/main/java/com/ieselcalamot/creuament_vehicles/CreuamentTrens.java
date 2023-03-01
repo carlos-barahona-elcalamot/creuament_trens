@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 import com.ieselcalamot.creuament_vehicles.vehicles.Colisio;
-import com.ieselcalamot.creuament_vehicles.vehicles.Simulador;
+import com.simuladors.Simulador;
 
 /**
  * Hello world!
