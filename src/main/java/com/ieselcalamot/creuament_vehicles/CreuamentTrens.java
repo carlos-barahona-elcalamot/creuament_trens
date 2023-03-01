@@ -4,8 +4,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+import com.ieselcalamot.creuament_vehicles.simuladors.Simulador;
 import com.ieselcalamot.creuament_vehicles.vehicles.Colisio;
-import com.simuladors.Simulador;
 
 /**
  * Hello world!

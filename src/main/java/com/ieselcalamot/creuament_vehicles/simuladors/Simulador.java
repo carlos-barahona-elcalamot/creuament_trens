@@ -1,4 +1,4 @@
-package com.simuladors;
+package com.ieselcalamot.creuament_vehicles.simuladors;
 
 import com.ieselcalamot.creuament_vehicles.vehicles.Colisio;
 import com.ieselcalamot.creuament_vehicles.vehicles.Via;
